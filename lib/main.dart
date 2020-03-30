@@ -8,7 +8,7 @@ void main() => runApp(
     Text('Craft beautiful UIs', textDirection: TextDirection.ltr,),
   Column(
     children: <Widget>[
-      Text('Coluna debaixo', textDirection: TextDirection.ltr,),
+      Text('Coluna debaixoooOo', textDirection: TextDirection.ltr,),
     ],
   ),
   ],
