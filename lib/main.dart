@@ -1,3 +1,16 @@
 import 'package:flutter/material.dart';
 
-void main() => print("bem vindo");
+void main() => runApp(
+  Column(
+  children: <Widget>[
+    Text('Deliver features faster', textDirection: TextDirection.ltr,),
+    Text('Craft beautiful UIs', textDirection: TextDirection.ltr,),
+    Text('Craft beautiful UIs', textDirection: TextDirection.ltr,),
+  Column(
+    children: <Widget>[
+      Text('Coluna debaixo', textDirection: TextDirection.ltr,),
+    ],
+  ),
+  ],
+  ),
+);
