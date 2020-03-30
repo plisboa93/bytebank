@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(
-  Column(
-  children: <Widget>[
-    Text('Deliver features faster', textDirection: TextDirection.ltr,),
-    Text('Craft beautiful UIs', textDirection: TextDirection.ltr,),
-    Text('Craft beautiful UIs', textDirection: TextDirection.ltr,),
-  Column(
-    children: <Widget>[
-      Text('Coluna debaixoooOo', textDirection: TextDirection.ltr,),
-    ],
+void main() => runApp(MaterialApp(
+  home: Scaffold(
+    appBar: AppBar(title: Text('Transferencias'),),
+    floatingActionButton: FloatingActionButton(child: Icon(Icons.add),
+    ),
   ),
-  ],
-  ),
-);
+));
