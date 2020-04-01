@@ -18,6 +18,20 @@ void main() => runApp(MaterialApp(
                 subtitle: Text('7000'),
               ),
             ),
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.monetization_on),
+                title: Text('800.0'),
+                subtitle: Text('15000'),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.monetization_on),
+                title: Text('900.0'),
+                subtitle: Text('11000'),
+              ),
+            ),
           ],
         ),
         appBar: AppBar(
