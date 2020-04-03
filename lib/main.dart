@@ -10,6 +10,8 @@ void main() => runApp(MaterialApp(
   ),
 ));
 
+
+
 class ListaTransferencias extends StatelessWidget {                      
   @override 
   Widget build(BuildContext context){
@@ -23,6 +25,8 @@ class ListaTransferencias extends StatelessWidget {
     );
   }
 }
+
+
 
 class ItemTransferencia extends StatelessWidget {
 
@@ -43,12 +47,12 @@ class ItemTransferencia extends StatelessWidget {
  }
 }
 
+
+
 class Transferencia {
   final double valor;
   final int numeroConta;
 
   Transferencia(this.valor, this.numeroConta);
 
-
-  
 }
