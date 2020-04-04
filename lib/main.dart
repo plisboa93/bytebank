@@ -20,8 +20,18 @@ class FormularioTransferencia extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Criando Transferência'),),
-       body: Text('teste'));
+      appBar: AppBar(
+        title: Text('Criando Transferência'),
+        ),
+       body: Column(
+         children: <Widget>[
+           TextField(),
+           TextField(),
+           TextField(),
+          RaisedButton(),
+        ],
+      ),     
+    );
   }
 }
 
