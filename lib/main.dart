@@ -15,26 +15,47 @@ class BytebankApp extends StatelessWidget {
 }
 
 
-
 class FormularioTransferencia extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Criando Transferência'),
-        ),
+      appBar: AppBar(title: Text('Criando Transferência'),),
        body: Column(
          children: <Widget>[
-           TextField(),
-           TextField(),
-           TextField(),
-          RaisedButton(),
+           Padding(
+             padding: const EdgeInsets.all(16.0),
+             child: TextField(
+               style: TextStyle(
+                 fontSize : 17.0,
+               ),
+               decoration: InputDecoration(
+                 labelText: 'Numero da Conta',
+                 hintText: '0000'
+               ),
+               keyboardType: TextInputType.number,
+             ),
+           ),
+           Padding(
+             padding: const EdgeInsets.all(16.0),
+             child: TextField(
+               style: TextStyle(
+                 fontSize : 17.0,
+               ),
+               decoration: InputDecoration(
+                 icon: Icon(Icons.monetization_on),
+                 labelText: 'Valor',
+                  hintText: '0.00'
+               ),
+               keyboardType: TextInputType.number,
+             ),
+           ),
+          RaisedButton(
+            child: Text('Confimar'),
+          ),
         ],
-      ),     
-    );
+      ),);
   }
 }
-
 
 
 class ListaTransferencias extends StatelessWidget {                      
@@ -59,7 +80,6 @@ class ListaTransferencias extends StatelessWidget {
 }
 
 
-
 class ItemTransferencia extends StatelessWidget {
 
   final Transferencia _transferencia;
@@ -78,7 +98,6 @@ class ItemTransferencia extends StatelessWidget {
    );
  }
 }
-
 
 
 class Transferencia {
