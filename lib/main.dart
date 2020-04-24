@@ -26,41 +26,14 @@ class FormularioTransferencia extends StatelessWidget {
       appBar: AppBar(title: Text('Criando Transferência'),),
        body: Column(
          children: <Widget>[
-           Padding(
-             padding: const EdgeInsets.all(16.0),
-             child: TextField(
-               style: TextStyle(
-                 fontSize : 20.0,
-               ),
-               controller: _controladorCampoNumeroConta,
-               decoration: InputDecoration(
-                 labelText: 'Numero da Conta',
-                 hintText: '0000'
-               ),
-               keyboardType: TextInputType.number,
-             ),
-           ),
-           Padding(
-             padding: const EdgeInsets.all(16.0),
-             child: TextField(
-               controller: _controladorCampoValor,
-               style: TextStyle(
-                 fontSize : 20.0,),
-               decoration: InputDecoration(
-                 icon: Icon(Icons.monetization_on),
-                 labelText: 'Valor',
-                  hintText: '0.00'),
-               keyboardType: TextInputType.number,
-             ),
-           ),
+           Editor(_controladorCampoNumeroConta, 'Numero da conta', '000', null),
+           Editor(_controladorCampoValor, 'Valor', '0.00', Icons.monetization_on),
           RaisedButton(
             child: Text('Confirmar'), 
             onPressed: () {
               debugPrint('clicou no confirmar');
-              final int numeroConta = int.tryParse(_controladorCampoNumeroConta.text);
-              
+              final int numeroConta = int.tryParse(_controladorCampoNumeroConta.text);    
               final double valor = double.tryParse(_controladorCampoValor.text);
-              
               if (numeroConta != null && valor != null) {
                 final transferenciaCriada = Transferencia(valor, numeroConta);
                 debugPrint('$transferenciaCriada');
@@ -68,7 +41,7 @@ class FormularioTransferencia extends StatelessWidget {
                   SnackBar(
                     content: Text('$transferenciaCriada'),
                   )
-                )
+                );
               }
             },
           ),
@@ -77,27 +50,56 @@ class FormularioTransferencia extends StatelessWidget {
   }
 }
 
+class Editor extends StatelessWidget {
 
-// class ListaTransferencias extends StatelessWidget {                      
-//   @override 
-//   Widget build(BuildContext context){
+final TextEditingController _controlador;
+final String _rotulo;
+final String _dica;
+final IconData _icone;
 
-//     return Scaffold(
-//       appBar: AppBar(title: Text('Transferências'),
-//       ),
-//         body: Column(
-//           children: <Widget>[
-//            ItemTransferencia(Transferencia(100.0, 1000)),
-//            ItemTransferencia(Transferencia(200.0, 5000)),
-//            ItemTransferencia(Transferencia(300.0, 12000)),
-//         ],
-//       ),
-//       floatingActionButton: FloatingActionButton(
-//       child: Icon(Icons.add),
-//       ),
-//     );
-//   }
-// }
+  Editor(this._controlador, this._rotulo, this._dica, this._icone);
+
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+             padding: const EdgeInsets.all(16.0),
+             child: TextField(
+               controller: _controlador,
+               style: TextStyle(fontSize : 20.0,),
+               decoration: InputDecoration(
+                 icon: Icon(_icone),
+                 labelText: _rotulo,
+                  hintText: _dica,
+              ),
+               keyboardType: TextInputType.number,
+            ),
+    );
+  }
+}
+
+class ListaTransferencias extends StatelessWidget {                      
+  @override 
+  Widget build(BuildContext context){
+
+    return Scaffold(
+      appBar: AppBar(title: Text('Transferências'),
+      ),
+        body: Column(
+          children: <Widget>[
+           ItemTransferencia(Transferencia(100.0, 1000)),
+           ItemTransferencia(Transferencia(200.0, 5000)),
+           ItemTransferencia(Transferencia(300.0, 12000)),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+      child: Icon(Icons.add),
+      ),
+    );
+  }
+}
 
 
 class ItemTransferencia extends StatelessWidget {
