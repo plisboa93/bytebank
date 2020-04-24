@@ -58,7 +58,6 @@ void _criaTransferencia() {
   double.tryParse(_controladorCampoValor.text);
     if(numeroConta != null && valor != null) {
       final transferenciaCriada = Transferencia(valor, numeroConta);
-      debugPrint('Criando transferência');
       debugPrint('$transferenciaCriada');
   }
 }
@@ -98,7 +97,8 @@ class ListaTransferencias extends StatelessWidget {
   Widget build(BuildContext context){
 
     return Scaffold(
-      appBar: AppBar(title: Text('Transferências'),
+      appBar: AppBar(
+        title: Text('Transferências'),
       ),
         body: Column(
           children: <Widget>[
@@ -108,7 +108,7 @@ class ListaTransferencias extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-      child: Icon(Icons.add),
+        child: Icon(Icons.add),
       ),
     );
   }
