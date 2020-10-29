@@ -1,6 +1,6 @@
 # bytebank
 
-A new Flutter project.
+A new Flutter project with Alura.
 
 ## Getting Started
 
